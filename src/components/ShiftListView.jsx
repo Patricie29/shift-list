@@ -1,5 +1,5 @@
+import ShiftCard from './ShiftCard';
 import './ShiftListView.css';
-import { BiEdit } from "react-icons/bi";
 
 const shifts = [
     { name: 'a', time: '6:30 - 14:00', color: '#6bb6ff' },
@@ -16,17 +16,10 @@ const ShiftListView = () => {
     return (
         <div className="shift-list">
             {
-                shifts.map((shift) => (
-                    <div key={shift.name} className='shift-card' style={{ borderLeftColor: shift.color }}>
-                        <div className='shift-details'>
-                            <div className='shift-time'>{shift.time}</div>
-                            <div className="shift-name">Shift {shift.name}</div>
-                        </div>
-                        <div>
-                            <BiEdit size={18} />
-                        </div>
-                    </div>
-                ))
+                shifts.map((shift) => {
+                    const { name, time, color } = shift
+                    return <ShiftCard name={name} time={time} color={color} />
+                })
             }
         </div>
     )
