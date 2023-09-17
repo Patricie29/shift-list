@@ -22,8 +22,8 @@ const ShiftListView = () => {
                             <div className='shift-time'>{shift.time}</div>
                             <div className="shift-name">Shift {shift.name}</div>
                         </div>
-                        <div className="shift-icon">
-                            <BiEdit />
+                        <div>
+                            <BiEdit size={18} />
                         </div>
                     </div>
                 ))
